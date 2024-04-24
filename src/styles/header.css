@@ -1,20 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&display=swap');
 
-img{
-        width: 10rem;
-        height: auto;
-    
-}
-.img-div{
+img {
+    width: 10rem;
+    height: auto;
 
 }
-.navBar{
+
+.navBar {
     position: sticky;
     top: 0;
     left: 0;
 }
 
-.head{
+.head {
     display: flex;
     justify-content: space-between;
     padding: 1rem 2rem;
