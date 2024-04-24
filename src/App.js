@@ -1,24 +1,25 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import FileUpload from './test4';
+import Header from './header';
+import Table from './Table';
+
 
 function App() {
+  const [tableData, setTableData] = useState()
+  
+  const setFetchData = (data) => {
+    console.log(data)
+    return setTableData(data)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <div className='main'>
+        {!tableData ? <FileUpload tableData={tableData} setFetchData={setFetchData} /> : <Table tableData={tableData} />}
+      </div>
+    </>
   );
 }
 
