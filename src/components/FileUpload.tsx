@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-// import './fileupload.css';
+import './fileUpload.css';
 import "rsuite/dist/rsuite.css";
 import { Loader, Placeholder } from "rsuite";
 
@@ -78,27 +78,9 @@ const FileUpload = ({ tableData, setTableData }: FileUploadProps) => {
   const handleGetResults = async () => {
     try {
       setLoader(true)
-      setTableData({
-        jdId: "12346",
-        recommendedName: "Sample Name 1",
-      });
-      // const response = await axios.get('http://localhost:8000/startProcess');
-      // console.log("working")
-      // console.log(response.data.message)
-      // setTableData(
-      //     {
-      //       "data": [
-      //         {
-      //           "jdId": "12345",
-      //           "recommendedName": "Example Name"
-      //         },
-      //         {
-      //           "jdId": "12346",
-      //           "recommendedName": "Sample Name 1"
-      //         },
-      //       ]
-      //     })
-      //     console.log(tableData)
+      const response = await axios.get('http://localhost:8000/getResults');
+      setTableData(response.data.data)
+
       setLoader(false)
       // Handle the response as needed
     } catch (error) {
